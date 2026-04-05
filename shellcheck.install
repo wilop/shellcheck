@@ -1,0 +1,17 @@
+post_install () {
+    echo "ShellCheck"
+    echo "version: $1"
+    echo -e "\nSpellCheck works better with bash-language-server"
+    echo "To install bash-language-server by yourself type:"
+    echo -e "sudo npm i -g bash-language-server\n"
+}
+post_upgrade() {
+    post_install "$1"
+}
+post_remove() {
+    echo "ShellCheck"
+    echo "version: $1"
+    echo -e "\nBash-language-server is no needed by SpellCheck"
+    echo "To uninstall bash-language-server by yourself type:"
+    echo -e "sudo npm uninstall -g bash-language-server\n"
+}
